@@ -1,5 +1,7 @@
 # VSCO.CO Downloader
 
+## [Download](https://github.com/NicholasDawson/VSCO-Downloader/raw/master/VSCO_Downloader.exe "Download")
+
 #### How to Use:
 1. Run "VSCO_Downloader.exe"
 (Note the first time you run the program will have to download chromium browser, this is normal and this is how the program is able to render the javascript elements on the webpage)
