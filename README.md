@@ -9,6 +9,9 @@
 3. Wait for the program to download all photos and videos
 4. When done the program will close and all media will be saved in "Users/{username}" inside the directory of the program
 
+#### Updating Downloaded Profiles:
+To update already downloaded profiles just type "update" when the programs asks you for a username, and it will update all downloaded profiles. (All existing files, even if deleted off of the profile, will be kept on your machine)
+
 #### How does it work?
 The program works by loading the webpage of the user and saving all image and video elements directly from vsco servers. All photos and videos are downloaded in original quality (or whatever quality is stored on their servers) The program even searchs through all pages of the users profile to ensure all media is downloaded.
 
