@@ -15,13 +15,13 @@ def save_vsco_elements(elements, path):
             img_url = 'http:' + x['src']
         else:
             img_url = 'http:' + x['src'][:img_resize]
-        filename = img_url[img_url.rfind('/') + 1:]
-        if filename in files:
-            print('Found all new files.\n')
-            return True
         r = requests.get(img_url, allow_redirects=True)
         if path[-1] != '/':
             path += '/'
+        filename = r.url[r.url.rfind('/') + 1:]
+        if filename in files:
+            print('Found all new files.\n')
+            return True
         print(r.url)
         print(path + r.url[r.url.rfind('/') + 1:])
         if not isfile(path + r.url[r.url.rfind('/') + 1:]):
@@ -40,6 +40,7 @@ def update_users():
     print('All profiles updated successfully')
     print('Total profiles updated: ' + str(len(usernames)))
     print('-' * 30)
+    sleep(2)
 
 def get_media(profile_url, username):
     print('-' * 30)
@@ -87,18 +88,17 @@ def get_media(profile_url, username):
     # Download Profile Pic
     if next_page == 2:
         print('\nDownloading Profile Pic:')
-        if save_vsco_elements(profile_pic, 'Users/' + username + '/ProfilePics'):
-            return
-
+        save_vsco_elements(profile_pic, 'Users/' + username + '/ProfilePics')
+        
     # Download Images
     print('Downloading Images:')
     if save_vsco_elements(images, 'Users/' + username + '/Images'):
-        return
+        return True
 
     # Download Videos
     print('Videos')
     if save_vsco_elements(videos, 'Users/' + username + '/Videos'):
-        return
+        return True
 
     # Check for additional pages of media
     print('Attempting to download page ' + str(next_page) + '...')
