@@ -1,6 +1,6 @@
 # VSCO.CO Downloader
 
-## [Download](https://github.com/NicholasDawson/VSCO-Downloader/raw/master/VSCO_Downloader.exe "Download")
+## [Download](https://github.com/NicholasDawson/VSCO-Downloader/raw/master/VSCO%20Downloader.exe "Download")
 
 #### How to Use:
 1. Run "VSCO_Downloader.exe"
