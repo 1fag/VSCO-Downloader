@@ -51,6 +51,27 @@ def update_save_vsco_elements(elements, path):
     print('Done.\n')
 
 
+def download_from_txt():
+    textfile = input('Enter the text file name: ')
+    usernames = open(textfile, 'r').read().split('\n')
+    for user in usernames:
+        media = get_media('https://vsco.co/' + user + '/images/1', user)
+        if not media:
+            print('Error: Username not found. Try Again!')
+        else:
+            print('\n' + '-' * 30)
+            print('Media downloaded for user: ' + user)
+            print(str(len(listdir('Users/' + user + '/Images'))) + ' image(s) downloaded')
+            print(str(len(listdir('Users/' + user + '/Videos'))) + ' video(s) downloaded')
+            print(str(len(listdir('Users/' + user + '/ProfilePics'))) + ' profile pic downloaded')
+            print('\n' + '-' * 30)
+    print('-' * 30)
+    print('All profiles downloaded successfully')
+    print('Total profiles downloaded: ' + str(len(usernames)))
+    print('-' * 30)
+    sleep(2)
+
+
 def update_users():
     usernames = listdir('Users')
     for user in usernames:
@@ -191,6 +212,8 @@ def get_media(profile_url, username):
 username = str(input('Type VSCO Username: '))
 if username == 'update':
     update_users()
+elif username == 'textfile':
+    download_from_txt()
 else:
     media = get_media('https://vsco.co/' + username + '/images/1', username)
 
