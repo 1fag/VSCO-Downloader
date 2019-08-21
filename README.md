@@ -3,7 +3,7 @@
 ## [Download](https://github.com/NicholasDawson/VSCO-Downloader/raw/master/VSCO%20Downloader.exe "Download")
 
 #### How to Use:
-1. Run "VSCO_Downloader.exe"
+1. Run "VSCO Downloader.exe"
 (Note the first time you run the program will have to download chromium browser, this is normal and this is how the program is able to render the javascript elements on the webpage)
 2. Type the username of the profile you want to download
 3. Wait for the program to download all photos and videos
