@@ -21,11 +21,13 @@ def save_vsco_elements(elements, path):
         filename = r.url[r.url.rfind('/') + 1:]
         if filename in files:
             print('File already exists.')
+            return True
         print(r.url)
         print(path + r.url[r.url.rfind('/') + 1:])
         if not isfile(path + r.url[r.url.rfind('/') + 1:]):
             open(path + filename, 'wb').write(r.content)
     print('Done.\n')
+    return False
 
 def update_save_vsco_elements(elements, path):
     files = listdir(path)
@@ -196,11 +198,16 @@ def get_media(profile_url, username):
         
     # Download Images
     print('Downloading Images:')
-    save_vsco_elements(images, 'Users/' + username + '/Images')
+    if save_vsco_elements(images, 'Users/' + username + '/Images'):
+        session.close()
+        return True
 
     # Download Videos
     print('Videos')
-    save_vsco_elements(videos, 'Users/' + username + '/Videos')
+    if save_vsco_elements(videos, 'Users/' + username + '/Videos'):
+        session.close()
+        return True
+    
 
     # Check for additional pages of media
     print('Attempting to download page ' + str(next_page) + '...')
@@ -210,21 +217,27 @@ def get_media(profile_url, username):
 
 # --------------------------------------------------------------------
 username = str(input('Type VSCO Username: '))
-if username == 'update':
-    update_users()
-elif username == 'textfile':
+username = username.split()
+if username[0] == 'update':
+    if len(username) == 2:
+        update_media('https://vsco.co/' + username[1] + '/images/1', username[1])
+        print('User: ' + username[1] + ' updated.')
+        sleep(2)
+    else:
+        update_users()
+elif username[0] == 'textfile':
     download_from_txt()
 else:
-    media = get_media('https://vsco.co/' + username + '/images/1', username)
+    media = get_media('https://vsco.co/' + username[0] + '/images/1', username[0])
 
     if not media:
         print('Error: Username not found. Try Again!')
     else:
         print('\n' + '-' * 30)
-        print('Media downloaded for user: ' + username)
-        print(str(len(listdir('Users/' + username + '/Images'))) + ' image(s) downloaded')
-        print(str(len(listdir('Users/' + username + '/Videos'))) + ' video(s) downloaded')
-        print(str(len(listdir('Users/' + username + '/ProfilePics'))) + ' profile pic downloaded')
+        print('Media downloaded for user: ' + username[0])
+        print(str(len(listdir('Users/' + username[0] + '/Images'))) + ' image(s) downloaded')
+        print(str(len(listdir('Users/' + username[0] + '/Videos'))) + ' video(s) downloaded')
+        print(str(len(listdir('Users/' + username[0] + '/ProfilePics'))) + ' profile pic downloaded')
         print('\n' + '-' * 30)
         sleep(2)
 
