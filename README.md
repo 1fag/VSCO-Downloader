@@ -12,6 +12,9 @@
 #### Updating Downloaded Profiles:
 To update already downloaded profiles just type "update" when the program asks you for a username, and it will update all downloaded profiles. (All existing files, even if deleted off of the profile, will be kept on your machine)
 
+#### Updating Individual Profiles:
+To update individual profiles just type "update" and then the username after a space. (ex. update USERNAME)
+
 #### Bulk Downloading Capabilities:
 To download a list of usernames at once, simply make a text file where each username has it's own line. Type the command "textfile" when the program asks you for a username. The program will begin downloading each of the names on the list top to bottom.
 
