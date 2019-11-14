@@ -2,24 +2,64 @@
 
 ## [Download](https://github.com/NicholasDawson/VSCO-Downloader/raw/master/VSCO%20Downloader.exe "Download")
 
-#### How to Use:
-1. Run "VSCO Downloader.exe"
-(Note the first time you run the program will have to download chromium browser, this is normal and this is how the program is able to render the javascript elements on the webpage)
-2. Type the username of the profile you want to download
-3. Wait for the program to download all photos and videos
-4. When done the program will close and all media will be saved in "Users/{username}" inside the directory of the program
+## How to Use:
+ 1. Run VSCO Downloader.exe
+ 2. Enter a command
 
-#### Updating Downloaded Profiles:
-To update already downloaded profiles just type "update" when the program asks you for a username, and it will update all downloaded profiles. (All existing files, even if deleted off of the profile, will be kept on your machine)
+## Basic Examples:
 
-#### Updating Individual Profiles:
-To update individual profiles just type "update" and then the username after a space. (ex. update USERNAME)
+##### All media downloads to the directory the application is running in. Media is saved in folders by username.
 
-#### Bulk Downloading Capabilities:
-To download a list of usernames at once, simply make a text file where each username has it's own line. Type the command "textfile" when the program asks you for a username. The program will begin downloading each of the names on the list top to bottom.
+#### Download All Images/Videos from a profile:
+```
+<username> -i
+OR
+<username> --getImages
+```
 
-#### How does it work?
-The program works by loading the webpage of the user and saving all image and video elements directly from vsco servers. All photos and videos are downloaded in original quality (or whatever quality is stored on their servers) The program even searchs through all pages of the users profile to ensure all media is downloaded.
+#### Download Journals from a profile:
+```
+<username> -j
+OR
+<username> --getJournal
+```
+
+#### Download Everything from a profile:
+```
+<username> -i -j
+OR
+<username> --getImages --getJournal
+```
+
+#### Download Images/Videos from multiple users (Bulk Downloading):
+##### Don't forget to add a '.txt' to the end of a text file!
+
+##### If you don't want to type the whole file path to the text file, ensure it is in the same directory or folder as your executable.
+```
+<usernames_list.txt> -m
+OR
+<usernames_list.txt> --multiple
+```
+
+#### Download Journals from multiple users (Bulk Downloading Journals):
+```
+<usernames_list.txt> -mj
+OR
+<usernames_list.txt> --multipleJournal
+```
+
+#### Download Everything from multiple users (Bulk Downloading Everything):
+```
+<usernames_list.txt> -a
+OR
+<usernames_list.txt> --all
+```
+
+#### Acknowledgments
+The bulk of the code is taken directly from Mustafa Abdi and his vsco-scraper application.
+https://github.com/mvabdi/vsco-scraper
+
+I modified some of his code for usability and turned it into an executable.
 
 #### Questions/Suggestions
 If you have any questions about the program and how it was made feel free to contact me at dunkindawson@gmail.com.
