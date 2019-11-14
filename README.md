@@ -55,14 +55,15 @@ OR
 <usernames_list.txt> --all
 ```
 
-#### Acknowledgments
+
+## Acknowledgments
 The bulk of the code is taken directly from Mustafa Abdi and his vsco-scraper application.
 https://github.com/mvabdi/vsco-scraper
 
 I modified some of his code for usability and turned it into an executable.
 
-#### Questions/Suggestions
+## Questions/Suggestions
 If you have any questions about the program and how it was made feel free to contact me at dunkindawson@gmail.com.
 If you find any bugs or want to suggest an improvement feel free to email me or submit a pull request.
 
-#### Copyright &copy; 2019 Nicholas Dawson
+## Copyright &copy; 2019 Nicholas Dawson
