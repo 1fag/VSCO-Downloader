@@ -54,7 +54,15 @@ OR
 OR
 <usernames_list.txt> --all
 ```
+## Parameters Reference Table
 
+Option | Secondary Options | Description
+------ | ------------- | -----------
+--getImages | -i | Downloads all of the user's images/videos
+--getJournal | -j | Downloads all of the images/videos in the user's journals and creates a directory for each journal
+--multiple | -m | Downloads multple user's images/videos
+--multipleJournal | -mj | Downloads multiple user's journals
+--all | -a | Downloads multiple users journals and images, will download journal if they have one
 
 ## Acknowledgments
 The bulk of the code is taken directly from Mustafa Abdi and his vsco-scraper application.
