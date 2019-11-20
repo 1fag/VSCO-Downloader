@@ -1,6 +1,8 @@
 # VSCO.CO Downloader
 
-## [Download](https://github.com/NicholasDawson/VSCO-Downloader/raw/master/VSCO%20Downloader.exe "Download")
+## [Download For Windows](https://github.com/NicholasDawson/VSCO-Downloader/raw/master/VSCO%20Downloader.exe "Download")
+## [Download Python Script](https://github.com/NicholasDawson/VSCO-Downloader/raw/master/vscoscrape.py "Download")
+Required Libraries: tqdm and requests
 
 ## How to Use:
  1. Run VSCO Downloader.exe
